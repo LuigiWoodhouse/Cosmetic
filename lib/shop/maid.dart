@@ -1,4 +1,4 @@
-import 'package:cosplay/shop/maid-item.dart';
+import 'package:cosplay/shop/maid-view.dart';
 import 'package:flutter/material.dart';
 
 class MaidPage extends StatelessWidget {
@@ -24,7 +24,7 @@ class MaidPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MaidItemPage(
-                      imagePath: maidItems[index].imagePath,
+                      imagePaths: maidItems[index].imagePaths,
                       name: maidItems[index].name,
                     ),
                   ),
@@ -37,7 +37,7 @@ class MaidPage extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Image.asset(
-                        maidItems[index].imagePath,
+                        maidItems[index].imagePaths[0],
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -63,15 +63,15 @@ class MaidPage extends StatelessWidget {
 }
 
 class MaidItem {
-  final String imagePath;
+  final List<String> imagePaths;
   final String name;
 
-  MaidItem({required this.imagePath, required this.name});
+  MaidItem({required this.imagePaths, required this.name});
 }
 
-// List of maid items with image paths and names
+// List of maid items with multiple image paths and names
 final List<MaidItem> maidItems = [
-  MaidItem(imagePath: 'lib/assets/maid1.png', name: 'Maid 1'),
-  MaidItem(imagePath: 'lib/assets/maid2.png', name: 'Maid 2'),
-  MaidItem(imagePath: 'lib/assets/maid3.png', name: 'Maid 3'),
+  MaidItem(imagePaths: ['lib/assets/maid1_1.png', 'lib/assets/maid1_2.png'], name: 'Maid 1'),
+  MaidItem(imagePaths: ['lib/assets/maid2_1.png', 'lib/assets/maid2_2.png'], name: 'Maid 2'),
+  MaidItem(imagePaths: ['lib/assets/maid3_1.png', 'lib/assets/maid3_2.png'], name: 'Maid 3'),
 ];
