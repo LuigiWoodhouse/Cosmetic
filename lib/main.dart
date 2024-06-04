@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 import 'sidenav.dart';
 
 void main() {
@@ -12,22 +13,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
-        '/': (context) => HomePage(),
-        '/cart': (context) => CartPage(), // Replace CartPage with your actual cart page
+        '/login': (context) => const LoginPage(),
+        '/sidenav': (context) => SideNav(),
+        '/cart': (context) => CartPage(),
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('E-commerce App')),
-      drawer: SideNav(),
-      body: Center(child: Text('Welcome to E-commerce App')),
     );
   }
 }
