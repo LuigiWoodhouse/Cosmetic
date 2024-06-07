@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'service/auth_service.dart';
-import 'sidenav.dart';
+import 'main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
   bool _isPasswordVisible = false;
 
-   // Toggle this variable to true when you want to bypass the login for debugging
+  // Toggle this variable to true when you want to bypass the login for debugging
   bool debugMode = true;
 
   @override
@@ -93,12 +93,12 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
         const SizedBox(height: 10),
-         ElevatedButton(
+        ElevatedButton(
           onPressed: () async {
             if (debugMode) {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => SideNav()),
+                MaterialPageRoute(builder: (context) => HomePage()),
               );
             } else {
               final authService = AuthService();
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
               if (loginSuccessful) {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => SideNav()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
