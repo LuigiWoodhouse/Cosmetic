@@ -1,4 +1,4 @@
-import 'package:cosplay/shop/maid-view.dart';
+import 'package:cosplay/items/single-item-view.dart';
 import 'package:flutter/material.dart';
 
 class MaidPage extends StatelessWidget {
@@ -7,7 +7,7 @@ class MaidPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Maid')),
+      //appBar: AppBar(title: const Text('Maid')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(

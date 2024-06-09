@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:cosplay/sidenav.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
+     return Center(
+      child: Text('Home Page'),
     );
   }
 }

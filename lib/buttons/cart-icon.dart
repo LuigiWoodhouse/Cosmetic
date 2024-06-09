@@ -5,8 +5,8 @@ class CartIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        // Navigate to cart page
-        Navigator.pushNamed(context, '/cart'); // Replace with your cart route
+        // Navigate to the home page with the cart index
+        Navigator.pushReplacementNamed(context, '/home', arguments: 1); // Pass the index of the cart page
       },
       icon: Icon(Icons.shopping_cart),
       color: Colors.pink,
