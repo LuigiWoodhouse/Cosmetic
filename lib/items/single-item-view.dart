@@ -5,9 +5,14 @@ import 'package:flutter/material.dart';
 class MaidItemPage extends StatefulWidget {
   final List<String> imagePaths;
   final String name;
+  final String price; // Add price field
 
-  const MaidItemPage({Key? key, required this.imagePaths, required this.name})
-      : super(key: key);
+  const MaidItemPage({
+    Key? key,
+    required this.imagePaths,
+    required this.name,
+    required this.price, // Add price to constructor
+  }) : super(key: key);
 
   @override
   _MaidItemPageState createState() => _MaidItemPageState();
@@ -80,8 +85,15 @@ class _MaidItemPageState extends State<MaidItemPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
+                  '\$${widget.price}', // Display price
+                  style: Theme.of(context).textTheme.headline6?.copyWith(fontSize: 16.0),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
                   widget.name,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(fontSize: 16.0),
                 ),
               ),
               SizedBox(height: 20.0),
@@ -119,10 +131,10 @@ class _MaidItemPageState extends State<MaidItemPage> {
                         children: [
                           Text(
                             'Bust',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 8.0),
                           ),
                           SizedBox(height: 4),
-                          Text(sizeDetails[_selectedSize]!['Bust']!),
+                          Text(sizeDetails[_selectedSize]!['Bust']!, style: TextStyle(fontSize: 8.0)),
                         ],
                       ),
                       SizedBox(width: 20),
@@ -131,10 +143,10 @@ class _MaidItemPageState extends State<MaidItemPage> {
                         children: [
                           Text(
                             'Length',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 8.0),
                           ),
                           SizedBox(height: 4),
-                          Text(sizeDetails[_selectedSize]!['Length']!),
+                          Text(sizeDetails[_selectedSize]!['Length']!, style: TextStyle(fontSize: 8.0)),
                         ],
                       ),
                       SizedBox(width: 20),
@@ -143,10 +155,10 @@ class _MaidItemPageState extends State<MaidItemPage> {
                         children: [
                           Text(
                             'Underbust',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 8.0),
                           ),
                           SizedBox(height: 4),
-                          Text(sizeDetails[_selectedSize]!['Underbust']!),
+                          Text(sizeDetails[_selectedSize]!['Underbust']!, style: TextStyle(fontSize: 8.0)),
                         ],
                       ),
                     ],

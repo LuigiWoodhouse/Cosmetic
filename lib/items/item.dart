@@ -25,7 +25,7 @@ class MaidPage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => MaidItemPage(
                       imagePaths: maidItems[index].imagePaths,
-                      name: maidItems[index].name,
+                      name: maidItems[index].name, price: '1000 JMD',
                     ),
                   ),
                 );
