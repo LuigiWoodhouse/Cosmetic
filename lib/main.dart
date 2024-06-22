@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('E-commerce App'),
+        //title: const Text('E-commerce App'),
       ),
       body: Center(
         child: _getPageWidget(_selectedIndex),
