@@ -42,7 +42,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     // Check for initial arguments and set the selected index
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final int? initialIndex = ModalRoute.of(context)?.settings.arguments as int?;
+      final int? initialIndex =
+          ModalRoute.of(context)?.settings.arguments as int?;
       if (initialIndex != null) {
         setState(() {
           _selectedIndex = initialIndex;
@@ -62,9 +63,9 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return Home(); // Replace with your actual Home Page widget if needed
       case 1:
-        return CartPage(); // Using your actual Cart Page widget
+        return ShopPage(); // Using your actual Cart Page widget
       case 2:
-        return ShopPage(); // Using your actual Shop Page widget
+        return CartPage(); // Using your actual Shop Page widget
       case 3:
         return AccountPage(); // Replace with your actual Account Page widget if needed
       default:
@@ -76,25 +77,26 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //title: const Text('E-commerce App'),
-      ),
+          //title: const Text('E-commerce App'),
+          ),
       body: Center(
         child: _getPageWidget(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Ensure items are properly aligned
+        type:
+            BottomNavigationBarType.fixed, // Ensure items are properly aligned
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.store),
             label: 'Shop',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
