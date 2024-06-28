@@ -1,9 +1,10 @@
+import 'package:cosplay/items/item.dart';
 import 'package:cosplay/items/single-item-view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class MaidPage extends StatelessWidget {
-  const MaidPage({super.key});
+class NursePage extends StatelessWidget {
+  const NursePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class MaidPage extends StatelessWidget {
           crossAxisCount: 4,
           crossAxisSpacing: 8.0,
           mainAxisSpacing: 8.0,
-          itemCount: maidItems.length,
+          itemCount: nurseItems.length,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
@@ -22,8 +23,8 @@ class MaidPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => MaidItemPage(
-                      imagePaths: maidItems[index].imagePaths,
-                      name: maidItems[index].name,
+                      imagePaths: nurseItems[index].imagePaths,
+                      name: nurseItems[index].name,
                       price: '1000 JMD',
                     ),
                   ),
@@ -36,14 +37,14 @@ class MaidPage extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Image.asset(
-                        maidItems[index].imagePaths[0],
+                        nurseItems[index].imagePaths[0],
                         fit: BoxFit.cover,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        maidItems[index].name,
+                        nurseItems[index].name,
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
                           fontSize: 16.0, // Adjust the font size here
                         ),
@@ -63,18 +64,9 @@ class MaidPage extends StatelessWidget {
   }
 }
 
-class ShopItem {
-  final List<String> imagePaths;
-  final String name;
-
-  ShopItem({required this.imagePaths, required this.name});
-}
-
-// List of maid items with multiple image paths and names
-final List<ShopItem> maidItems = [
-  ShopItem(imagePaths: ['lib/assets/maid1_1.png', 'lib/assets/maid1_2.png'], name: 'Maid 1'),
-  ShopItem(imagePaths: ['lib/assets/maid2_1.png', 'lib/assets/maid2_2.png'], name: 'Maid 2'),
-  ShopItem(imagePaths: ['lib/assets/maid3_1.png', 'lib/assets/maid3_2.png'], name: 'Maid 3'),
-  ShopItem(imagePaths: ['lib/assets/maid4_1.png', 'lib/assets/maid4_2.png'], name: 'Maid 4'),
-  ShopItem(imagePaths: ['lib/assets/maid5_1.png', 'lib/assets/maid5_2.png'], name: 'Maid 5'),
+// List of nurse items with multiple image paths and names
+final List<ShopItem> nurseItems = [
+  ShopItem(imagePaths: ['lib/assets/nurse1_1.png', 'lib/assets/nurse1_2.png'], name: 'Nurse 1'),
+  ShopItem(imagePaths: ['lib/assets/nurse2_1.png', 'lib/assets/nurse2_2.png'], name: 'Nurse 2'),
+  ShopItem(imagePaths: ['lib/assets/nurse3_1.png', 'lib/assets/nurse3_2.png'], name: 'Nurse 3'),
 ];

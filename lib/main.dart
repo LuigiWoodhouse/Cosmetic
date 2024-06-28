@@ -1,4 +1,4 @@
-import 'package:cosplay/layout/account.dart';
+import 'package:cosplay/layout/account/account.dart';
 import 'package:cosplay/layout/cart.dart';
 import 'package:cosplay/layout/home.dart';
 import 'package:cosplay/layout/shop.dart';
@@ -21,14 +21,14 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/cart': (context) => CartPage(),
-        '/shop': (context) => ShopPage(),
+        '/shop': (context) => const ShopPage(),
       },
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -63,11 +63,11 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return Home(); // Replace with your actual Home Page widget if needed
       case 1:
-        return ShopPage(); // Using your actual Cart Page widget
+        return const ShopPage(); // Using your actual Cart Page widget
       case 2:
         return CartPage(); // Using your actual Shop Page widget
       case 3:
-        return AccountPage(); // Replace with your actual Account Page widget if needed
+        return const AccountPage(); // Replace with your actual Account Page widget if needed
       default:
         return const SizedBox(); // Return a default widget
     }

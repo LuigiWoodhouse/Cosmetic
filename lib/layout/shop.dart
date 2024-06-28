@@ -1,17 +1,21 @@
 import 'package:cosplay/items/item.dart';
+import 'package:cosplay/items/nurse.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatelessWidget {
+  const ShopPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 1, // Update the length as you add more categories
+    return const DefaultTabController(
+      length: 2, // Update the length as you add more categories
       child: Scaffold(
         body: Column(
           children: [
             TabBar(
               tabs: [
                 Tab(text: 'Maid'),
+                Tab(text: 'Nurse'),
                 // Add more tabs here if you have more categories
               ],
             ),
@@ -19,7 +23,7 @@ class ShopPage extends StatelessWidget {
               child: TabBarView(
                 children: [
                   MaidPage(),
-                  // Add more pages here corresponding to the tabs
+                  NursePage(),
                 ],
               ),
             ),

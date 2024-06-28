@@ -1,7 +1,10 @@
+import 'package:cosplay/layout/account/profile.dart';
 import 'package:cosplay/orders/view_current_order.dart';
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatelessWidget {
+  const AccountPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,15 +12,15 @@ class AccountPage extends StatelessWidget {
         //title: Text('Account'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            const Text(
               'Orders',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, height: 1),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -56,12 +59,12 @@ class AccountPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               'Profile',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, height: 1),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -69,7 +72,12 @@ class AccountPage extends StatelessWidget {
                   icon: Icons.person,
                   text: 'Personal',
                   onPressed: () {
-                    // Handle personal info action
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PersonalInfoPage(),
+                      ),
+                    );
                   },
                 ),
                 ProfileOption(
@@ -95,12 +103,12 @@ class AccountPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               'Customer Support',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, height: 1),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -147,11 +155,11 @@ class OrderOption extends StatelessWidget {
   final VoidCallback onPressed;
 
   const OrderOption({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -161,10 +169,10 @@ class OrderOption extends StatelessWidget {
           icon: Icon(icon),
           onPressed: onPressed,
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           text,
-          style: TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 12),
         ),
       ],
     );
@@ -177,11 +185,11 @@ class ProfileOption extends StatelessWidget {
   final VoidCallback onPressed;
 
   const ProfileOption({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -191,10 +199,10 @@ class ProfileOption extends StatelessWidget {
           icon: Icon(icon),
           onPressed: onPressed,
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           text,
-          style: TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 12),
         ),
       ],
     );
@@ -207,11 +215,11 @@ class SupportOption extends StatelessWidget {
   final VoidCallback onPressed;
 
   const SupportOption({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -221,10 +229,10 @@ class SupportOption extends StatelessWidget {
           icon: Icon(icon),
           onPressed: onPressed,
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Text(
           text,
-          style: TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 12),
         ),
       ],
     );
